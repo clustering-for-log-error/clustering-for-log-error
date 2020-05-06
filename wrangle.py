@@ -68,16 +68,19 @@ def handle_nulls(df):
     return df
 
 
-def add_counties(df):
+def prepare_zillow(df):
     '''
-    Takes in a df and returns the same df with 
-    Boolean columns indicating which county
-    Each observation is in
+    Takes in a df and returns the same df with: 
+    Boolean columns indicating which county each observation is in,
+    Column indicating age of home
     '''
 
-    # create dummy vars of fips id
+    # create df with counties as booleans
     county_df = pd.get_dummies(df.fips)
     county_df.columns = ['Los_Angeles', 'Orange', 'Ventura']
     df = pd.concat([df, county_df], axis = 1)
     df = df.drop(columns = ['fips'])
+
+    # calculate age of home
+    df['age'] = 2017 - df.yearbuilt
     return df
