@@ -66,3 +66,9 @@ def handle_nulls(df):
     # drop all remaining rows with null values
     df = df.dropna()
     return df
+
+
+def prepare_zillow(df):
+    df["County"] = df['fips'].map({6037: "Los Angeles", 6059: "Orange", 6111: "Ventura"})
+    df = df.drop(columns=['fips'])
+    return df
