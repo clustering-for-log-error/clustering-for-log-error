@@ -15,7 +15,9 @@ def get_zillow_data():
    query = '''
    SELECT properties_2017.parcelid, bathroomcnt, bedroomcnt, buildingqualitytypeid, calculatedfinishedsquarefeet,  
 finishedsquarefeet12, fips, fullbathcnt, latitude, longitude, lotsizesquarefeet, propertycountylandusecode,     
-rawcensustractandblock, regionidcity, regionidcounty, regionidzip, roomcnt, unitcnt, yearbuilt, structuretaxvaluedollarcnt,taxvaluedollarcnt, assessmentyear, landtaxvaluedollarcnt, taxamount,                      
+regionidcity, regionidcounty, regionidzip, roomcnt, unitcnt, yearbuilt, 
+structuretaxvaluedollarcnt,taxvaluedollarcnt, assessmentyear, 
+landtaxvaluedollarcnt, taxamount,                      
 predictions_2017.logerror,                       
 predictions_2017.transactiondate,                
 heatingorsystemdesc,            
