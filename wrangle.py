@@ -68,7 +68,16 @@ def handle_nulls(df):
     return df
 
 
-def prepare_zillow(df):
-    df["County"] = df['fips'].map({6037: "Los Angeles", 6059: "Orange", 6111: "Ventura"})
-    df = df.drop(columns=['fips'])
+def add_counties(df):
+    '''
+    Takes in a df and returns the same df with 
+    Boolean columns indicating which county
+    Each observation is in
+    '''
+
+    # create dummy vars of fips id
+    county_df = pd.get_dummies(df.fips)
+    county_df.columns = ['Los_Angeles', 'Orange', 'Ventura']
+    df = pd.concat([df, county_df], axis = 1)
+    df = df.drop(columns = ['fips'])
     return df
