@@ -170,7 +170,7 @@ def append_clusters_and_centroids(X_train, train_scaled, train_clusters,
     
     return X_train, train_scaled, X_test, test_scaled, centroids
 
-    def test_sig(cluster_column,df):
+def test_sig(cluster_column,df):
     """
     Takes a column of clusters and performs a t-test with the logerrors of cluster (subset) against the population logerror.
     """  
