@@ -35,4 +35,4 @@ def transaction_month(df):
 
 def bed_bath_ratio(df):
     df['bed_bath_ratio'] = df.bedroomcnt/df.bathroomcnt
-return df
+    return df
