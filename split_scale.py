@@ -4,7 +4,7 @@ import sklearn.preprocessing
 import sklearn.model_selection
 import sklearn.impute
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder, OneHotEncoder, MinMaxScaler
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder, MinMaxScaler, StandardScaler
 
 def train_test(df):
     '''
@@ -15,9 +15,8 @@ def train_test(df):
 
     # validate data split
     train, test = sklearn.model_selection.train_test_split(df, train_size=.80, random_state=123)
-    train, validate = sklearn.model_selection.train_test_split(train, train_size=.80, random_state=123)
 
-    return train, validate, test
+    return train, test
 
 # standard_scaler()
 def standard_scaler(train, test):
@@ -33,9 +32,8 @@ def scale_inverse(train_scaled, test_scaled, scaler):
  
     return train_unscaled, test_unscaled
 
-# min_max_scaler()
 def min_max_scaler(train, test):
     scaler = MinMaxScaler(copy=True, feature_range=(0,1)).fit(train)
-    train_scaled, test_scaled = transform_scaler(train, test, scaler)
-
-    return train_scaled, test_scaled, scaler
+    train_scaled = pd.DataFrame(scaler.transform(train), columns=train.columns.values).set_index([train.index.values])
+    test_scaled = pd.DataFrame(scaler.transform(test), columns=test.columns.values).set_index([test.index.values])
+    return scaler, train_scaled, test_scaled
