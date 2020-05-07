@@ -50,7 +50,7 @@ def prepare_zillow(df):
     county_df = pd.get_dummies(df.fips)
     county_df.columns = ['Los_Angeles', 'Orange', 'Ventura']
     df = pd.concat([df, county_df], axis = 1)
-    df = df.drop(columns = ['fips'])
+
 
     # calculate age of home
     df['age'] = 2017 - df.yearbuilt
