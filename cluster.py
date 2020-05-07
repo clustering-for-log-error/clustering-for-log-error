@@ -10,6 +10,7 @@ import acquire
 import wrangle
 import prepare
 from sklearn.neighbors import KDTree
+from scipy import stats
 
 import warnings
 warnings.filterwarnings("ignore")
