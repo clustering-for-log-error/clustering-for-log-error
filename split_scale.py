@@ -14,7 +14,7 @@ def train_test(df):
     df = df.copy()
 
     # validate data split
-    train, test = sklearn.model_selection.train_test_split(df, train_size=.80, random_state=123)
+    train, test = sklearn.model_selection.train_test_split(df, train_size=.70, random_state=121)
 
     return train, test
 
