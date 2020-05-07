@@ -170,3 +170,21 @@ def append_clusters_and_centroids(X_train, train_scaled, train_clusters,
     
     return X_train, train_scaled, X_test, test_scaled, centroids
 
+    def test_sig(cluster_column,df):
+    """
+    Takes a column of clusters and performs a t-test with the logerrors of cluster (subset) against the population logerror.
+    """  
+    ttest_list = []
+    pval_list = []
+    stat_sig = []
+
+    for cluster in cluster_column.unique():
+        ttest, pval = stats.ttest_1samp(df["logerror"][cluster_column == cluster],df["logerror"].mean(),axis=0,nan_policy="propagate")
+        ttest_list.append(ttest)
+        pval_list.append(pval)
+        sig = pval < 0.05
+        stat_sig.append(sig)
+        
+    stats_cluster_column = pd.DataFrame({"ttest":ttest_list,"pval":pval_list,"stat_sig":stat_sig})
+    return stats_cluster_column
+
