@@ -22,7 +22,6 @@ def get_zillow_data():
       latitude,
       longitude,  
       lotsizesquarefeet,
-      roomcnt,
       yearbuilt, 
       structuretaxvaluedollarcnt,
       taxvaluedollarcnt, 
