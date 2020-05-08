@@ -1,6 +1,6 @@
 # What is driving the errors in the Zestimates?
 
-![Parcel Density Plot of our area of interest](/parcel_density.png)
+![Parcel Density Plot of our area of interest](parcel_density.png)
 
 ### Improve our original estimate of the log error by using Clustering ML Algorithm
 
