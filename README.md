@@ -36,6 +36,21 @@ The notebook should cover all the steps from acquistion through modeling. There 
 
 3. Finally, all the modules where the functions are necessary, indicated or ideal, it runs the functions in the notebook, but the functions are stored in their respective modules (prepare.py, e.g.). You will have an acquire.py, prepare.py (or wrangle to cover both acquire and prepare), and model.py (fit, predict, evaluate the final model) - and any other necessary modules.
 
+# Data Dictionary
+
+| Feature        | Count                  | Description                                                                                       |
+|----------------|------------------------|---------------------------------------------------------------------------------------------------|
+| latitude       | 59930 non-null float64 | Geographic coordinate that specifies the north–south position of each home on the Earth's surface |
+| longitude      | 59930 non-null float64 | Geographic coordinate that specifies the east–west position of each home on the Earth's surface   |
+| age            | 59930 non-null int64   | Derived column which indicates the age of the home at the time it was sold                        |
+| square_footage | 59930 non-null float64 | Total square foot of home                                                                         |
+| lot_size       | 59930 non-null float64 | Total square foot of entire lot                                                                   |
+| full_value     | 59930 non-null float64 | Total actual price of home                                                                        |
+| Los_Angeles    | 59930 non-null int64   | Indicates if the home is in Los Angeles county                                                    |
+| Orange         | 59930 non-null int64   | Indicates if the home is in Orange county                                                         |
+| Ventura        | 59930 non-null int64   | Indicates if the home is in Ventura county                                                        |
+| logerror       | 59930 non-null float64 | Log of the error between actual home price and estimated home price                               |
+
 ## *The Pipeline*
 
 ### PROJECT PLANNING & README
