@@ -4,7 +4,9 @@
 
 ### *The Notebook*
 
-> The main notebook in this repo will serve as the primary findings of our research. 
+> The main notebook in this repo will serve as the primary findings of our research.
+
+> You can also view the notebook as it's own webpage here: https://chasethompson.github.io/#
 
 ## *Background*:
 
