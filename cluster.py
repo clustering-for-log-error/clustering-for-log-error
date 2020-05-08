@@ -20,7 +20,7 @@ warnings.filterwarnings("ignore")
 def elbow_method(list_of_3_variables):
     cluster_vars = list_of_3_variables
 
-    ks = range(2,20)
+    ks = range(2,15)
     sse = []
     for k in ks:
         kmeans = KMeans(n_clusters=k)
@@ -152,10 +152,10 @@ def append_clusters_and_centroids(X_train, train_scaled, train_clusters,
     
     # join the cluster ID's with the X dataframes (the scaled and unscaled, train and test
     
-    X_train = pd.concat([X_train, train_clusters], axis = 1)
+    X_train_scaled = pd.concat([X_train, train_clusters], axis = 1)
     train_scaled = pd.concat([train_scaled, train_clusters], axis = 1)
 
-    X_test = pd.concat([X_test, test_clusters], axis = 1)
+    X_test_scaled = pd.concat([X_test, test_clusters], axis = 1)
     test_scaled = pd.concat([test_scaled, test_clusters], axis = 1)
       
     # get the centroids for  distinct cluster...
@@ -163,13 +163,13 @@ def append_clusters_and_centroids(X_train, train_scaled, train_clusters,
     centroids.rename(columns = {'index': cluster_col_name}, inplace = True)
     
     # merge the centroids with the X dataframes (both the scaled and unscaled)
-    X_train = X_train.merge(centroids, how='left', on=cluster_col_name).set_index(X_train.index)
+    X_train_scaled = X_train_scaled.merge(centroids, how='left', on=cluster_col_name).set_index(X_train_scaled.index)
     train_scaled = train_scaled.merge(centroids, how = 'left', on = cluster_col_name).set_index(train_scaled.index)
     
-    X_test = X_test.merge(centroids, how = 'left', on = cluster_col_name).set_index(X_test.index)
+    X_test_scaled = X_test_scaled.merge(centroids, how = 'left', on = cluster_col_name).set_index(X_test_scaled.index)
     test_scaled = test_scaled.merge(centroids, how = 'left', on = cluster_col_name).set_index(test_scaled.index)
     
-    return X_train, train_scaled, X_test, test_scaled, centroids
+    return X_train_scaled, train_scaled, X_test_scaled, test_scaled, centroids
 
 def test_sig(cluster_column,df):
     """

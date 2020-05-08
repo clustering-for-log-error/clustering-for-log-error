@@ -14,7 +14,7 @@ def better_names(df):
     df = df.rename(columns={"calculatedfinishedsquarefeet":"square_footage", "structuretaxvaluedollarcnt":"house_value", "landtaxvaluedollarcnt":"land_value", "taxvaluedollarcnt":"full_value", "lotsizesquarefeet":"lot_size"})
      
     # reorder
-    df = df[["longitude", "latitude", "age", "month", "bedroomcnt", "bathroomcnt", "square_footage", "lot_size", "house_value", "land_value", "full_value", "tax_rate", "Los_Angeles", "Orange", "Ventura", "logerror", "bed_bath_ratio"]]
+    df = df[["longitude", "latitude", "age", "bedroomcnt", "bathroomcnt", "square_footage", "lot_size", "house_value", "land_value", "full_value", "tax_rate", "Los_Angeles", "Orange", "Ventura", "logerror", "bed_bath_ratio"]]
     return df
 
 def tax_rate(df):
