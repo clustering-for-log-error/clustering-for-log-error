@@ -50,6 +50,8 @@ The notebook should cover all the steps from acquistion through modeling. There 
 | Orange         | 59930 non-null int64   | Indicates if the home is in Orange county                                                         |
 | Ventura        | 59930 non-null int64   | Indicates if the home is in Ventura county                                                        |
 | logerror       | 59930 non-null float64 | Log of the error between actual home price and estimated home price                               |
+| lot_cluster    | 59930 non-null int64   | Derived column which indicates if each home is in the cluster containing lot_size                 |
+| loc_cluster    | 59930 non-null int64   | Derived column which indicates if each home is in the cluster containing latitude and longitude   |
 
 ## *The Pipeline*
 
