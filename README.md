@@ -38,20 +38,20 @@ The notebook should cover all the steps from acquistion through modeling. There 
 
 # Data Dictionary
 
-| Feature        | Count                  | Description                                                                                       |
-|----------------|------------------------|---------------------------------------------------------------------------------------------------|
-| latitude       | 59930 non-null float64 | Geographic coordinate that specifies the north–south position of each home on the Earth's surface |
-| longitude      | 59930 non-null float64 | Geographic coordinate that specifies the east–west position of each home on the Earth's surface   |
-| age            | 59930 non-null int64   | Derived column which indicates the age of the home at the time it was sold                        |
-| square_footage | 59930 non-null float64 | Total square foot of home                                                                         |
-| lot_size       | 59930 non-null float64 | Total square foot of entire lot                                                                   |
-| full_value     | 59930 non-null float64 | Total actual price of home                                                                        |
-| Los_Angeles    | 59930 non-null int64   | Indicates if the home is in Los Angeles county                                                    |
-| Orange         | 59930 non-null int64   | Indicates if the home is in Orange county                                                         |
-| Ventura        | 59930 non-null int64   | Indicates if the home is in Ventura county                                                        |
-| logerror       | 59930 non-null float64 | Log of the error between actual home price and estimated home price                               |
-| lot_cluster    | 59930 non-null int64   | Derived column which indicates if each home is in the cluster containing lot_size                 |
-| loc_cluster    | 59930 non-null int64   | Derived column which indicates if each home is in the cluster containing latitude and longitude   |
+| Feature        | Count                  | Description                                                                                                               |
+|----------------|------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| latitude       | 59930 non-null float64 | Geographic coordinate that specifies the north–south position of each home on the Earth's surface                         |
+| longitude      | 59930 non-null float64 | Geographic coordinate that specifies the east–west position of each home on the Earth's surface                           |
+| age            | 59930 non-null int64   | Derived column which indicates the age of the home at the time it was sold                                                |
+| square_footage | 59930 non-null float64 | Total square foot of home                                                                                                 |
+| lot_size       | 59930 non-null float64 | Total square foot of entire lot                                                                                           |
+| full_value     | 59930 non-null float64 | Total actual price of home                                                                                                |
+| Los_Angeles    | 59930 non-null int64   | Indicates if the home is in Los Angeles county                                                                            |
+| Orange         | 59930 non-null int64   | Indicates if the home is in Orange county                                                                                 |
+| Ventura        | 59930 non-null int64   | Indicates if the home is in Ventura county                                                                                |
+| logerror       | 59930 non-null float64 | Log of the error between actual home price and estimated home price                                                       |
+| lot_cluster    | 59930 non-null int64   | Derived column which indicates if each home is in the cluster containing lot_size, age and full value                     |
+| loc_cluster    | 59930 non-null int64   | Derived column which indicates if each home is in the cluster containing latitude, longitude, lot size and square footage |
 
 ## *The Pipeline*
 
